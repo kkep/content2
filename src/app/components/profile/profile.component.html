@@ -1,0 +1,6 @@
+<div id="profile-header" class="border"></div>
+<div id="profile-content" #profileContent class="border">
+  <div class="content-container">
+    <app-content *ngFor="let content of contents" [data]="content"></app-content>
+  </div>
+</div>

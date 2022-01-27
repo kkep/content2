@@ -1,0 +1,24 @@
+:host(app-login) {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > * {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    background: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px white;
+
+  }
+}
