@@ -1,7 +1,13 @@
 <div id="panel" class="border">
-  <div routerLink="search"><span class="fi fi-rr-search"></span></div>
-  <div><span class="fi fi-rr-camera"></span></div>
+  <div routerLink="search" (click)="toggleSearchInput($event)">
+    <span class="fi fi-rr-search">
+      <input id="searchInput" autofocus [class.show]="showSearchInput">
+    </span>
+
+  </div>
+<!--  <div><span class="fi fi-rr-camera"></span></div>-->
+  <div routerLink="chat"><span class="fi fi-rr-comments label"></span></div>
   <div routerLink="profile"><span class="fi fi-rr-home"></span></div>
-  <div><span class="fi fi-rr-camera"></span></div>
-  <div routerLink="setting"><span class="fi fi-rr-settings"></span></div>
+  <div><span class="fi fi-rr-music-alt"></span></div>
+  <div routerLink="notifications"><span class="fi fi-rr-bell"></span></div>
 </div>

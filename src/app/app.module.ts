@@ -11,6 +11,11 @@ import { SettingComponent } from './components/setting/setting.component';
 import { SearchComponent } from './components/search/search.component';
 import { ContentComponent } from './components/content/content.component';
 import { SliderComponent } from './components/slider/slider.component';
+import {TouchDirective} from "./directives/touch.directive";
+import { PlayDirective } from './directives/play.directive';
+import {HttpClientModule} from "@angular/common/http";
+import { NotificationComponent } from './components/notification/notification.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +26,17 @@ import { SliderComponent } from './components/slider/slider.component';
     SettingComponent,
     SearchComponent,
     ContentComponent,
-    SliderComponent
+    SliderComponent,
+    TouchDirective,
+    PlayDirective,
+    NotificationComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,4 +2,37 @@
   display: flex;
   justify-content: space-around;
   padding: 5px;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > span {
+      display: inline-flex;
+      align-items: center;
+      > input {
+        position: absolute;
+        width: 0px;
+        padding: 3px 0 3px 20px;
+        outline: none;
+        background: #ECF0F3;
+        transition: width .3s ease-in;
+      }
+      > input.show {
+        width: calc(80% - 20px);
+      }
+    }
+    > span.fi-rr-search::before {
+      z-index: 999;
+    }
+  }
+}
+
+span.label:after {
+  content: '';
+  background: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  margin: 0 0 15px 15px;
 }

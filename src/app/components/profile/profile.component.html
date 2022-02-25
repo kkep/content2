@@ -1,4 +1,15 @@
-<div id="profile-header" class="border"></div>
+<div id="profile-header" class="border">
+  <div class="avatar">
+    <img src="https://images.unsplash.com/photo-1644446640762-50cf344740b2?fit=crop&w=50&h=50&q=60">
+  </div>
+  <div class="profile-info">
+    <p>Иван Петров</p>
+  </div>
+  <div class="profile-add">
+    <span class="fi fi-rr-user-add"></span>
+<!--    <span class="fi fi-rr-settings"></span>-->
+  </div>
+</div>
 <div id="profile-content" #profileContent class="border">
   <div class="content-container">
     <app-content *ngFor="let content of contents" [data]="content"></app-content>

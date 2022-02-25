@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
 * {
   border: none;
@@ -20,7 +21,40 @@ body{
   height: calc(100vh - 20px);
 }
 
+router-outlet{
+  grid-row: 2;
+}
+
 .border{
   border-radius: 50px;
   box-shadow: 0 0 3px 1px rgb(192 192 192 / 42%);
+}
+
+.avatar{
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50px;
+  background: silver;
+  overflow: hidden;
+  > img {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+  }
+}
+
+.list-date{
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  > span {
+    border: 1px rgb(236 240 243 / 79%) solid;
+    border-radius: 50px;
+    padding: 3px 6px;
+    color: rgb(236 240 243 / 79%);
+    font-family: monospace;
+    text-transform: lowercase;
+  }
 }

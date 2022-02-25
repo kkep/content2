@@ -1,1 +1,17 @@
-<img [src]="m.src" *ngFor="let m of media">
+<div [ngStyle]="{marginLeft: (slide * -100) + '%'}">
+  <ng-container *ngFor="let m of media, let i = index">
+    <ng-container *ngTemplateOutlet="m.type == 'img' ? img : video; context: {m: m, index: i}"></ng-container>
+  </ng-container>
+</div>
+
+<ng-template #img let-m="m" >
+  <img [src]="m.src">
+</ng-template>
+
+<ng-template #video let-m="m" let-i="index">
+  <video [appPlay]="i === slide"
+         src="/assets/video.mp4"
+         preload="metadata"
+         [muted]="!parent.transformed"></video>
+</ng-template>
+

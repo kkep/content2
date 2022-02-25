@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
 
+  showSearchInput = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleSearchInput(event: Event) {
+    if ((event.target as HTMLInputElement).id !== '') {
+      this.showSearchInput = !this.showSearchInput;
+    }
+  }
 }

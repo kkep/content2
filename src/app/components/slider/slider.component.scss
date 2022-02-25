@@ -1,8 +1,22 @@
 :host{
   height: inherit;
   width: inherit;
+  > div {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    transition: margin-left .3s ease-in;
+  }
 }
-img{
+img, video{
   height: inherit;
   width: inherit;
+  touch-action: none;
+  object-fit: cover;
+  min-width: 100%;
+}
+
+video{
+  background: black;
 }

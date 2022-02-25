@@ -1,3 +1,86 @@
-<div class="transformer" #transformer>
-  <app-slider [media]="data.media"></app-slider>
+<div class="transformer" #transformer (appTouch)="slider.move($event)">
+  <app-slider #slider [media]="data.media"></app-slider>
+  <div class="controls" [class.hide]="!transformed">
+    <span class="fi fi-rr-comment" (click)="show($event, comments)"></span>
+    <span class="fi fi-rr-heart" [class.fi-sr-heart]="data.like" (click)="toggleLike($event)"></span>
+    <span class="fi fi-rr-undo" (click)="show($event, share)"></span>
+  </div>
+  <ng-container *ngIf="transformed">
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+  </ng-container>
 </div>
+
+<ng-template #comments>
+  <div class="comments" [class.show]="showed">
+    <div class="list">
+      <div class="list-date">
+        <span>Вчера</span>
+      </div>
+
+      <div class="list-item comment">
+        <div class="left">
+          <div class="avatar">
+            <img src="https://images.unsplash.com/photo-1644424235641-6c8ba0592af7?fit=crop&w=50&h=50&q=60">
+          </div>
+          <span>15:48</span>
+        </div>
+        <div class="right">
+          <p class="user_name">Иван Петров</p>
+          <p class="comment_text">Какой-то текст комментария</p>
+        </div>
+      </div>
+
+      <div class="list_date">
+        <span>Сегодня</span>
+      </div>
+
+      <div class="list-item comment self">
+        <div class="left">
+          <div class="avatar">
+            <img src="https://images.unsplash.com/photo-1644446640762-50cf344740b2?fit=crop&w=50&h=50&q=60">
+          </div>
+          <span>15:48</span>
+        </div>
+        <div class="right">
+          <p class="user_name">Иван Петров</p>
+          <p class="comment_text">Какой-то текст комментария</p>
+        </div>
+      </div>
+    </div>
+    <div class="textarea">
+      <textarea rows="1" placeholder="Комментарий..."></textarea>
+      <span class="fi fi-rr-paper-plane" (click)="show($event, null)"></span>
+    </div>
+    <span class="fi fi-rr-angle-down" (click)="show($event, null)"></span>
+  </div>
+</ng-template>
+<ng-template #share>
+  <div class="comments" [class.show]="showed">
+    <div class="list">
+      <div class="list-item share">
+        <div class="avatar">
+          <img src="https://images.unsplash.com/photo-1644446640762-50cf344740b2?fit=crop&w=50&h=50&q=60">
+        </div>
+        <div class="middle">
+          <p class="user_name">Иван Петров</p>
+        </div>
+        <div class="share_btn">
+          <span class="fi fi-rr-paper-plane" [class.fi-rr-check]="true"></span>
+        </div>
+      </div>
+
+      <div class="list-item share">
+        <div class="avatar">
+          <img src="https://images.unsplash.com/photo-1644446640762-50cf344740b2?fit=crop&w=50&h=50&q=60">
+        </div>
+        <div class="middle">
+          <p class="user_name">Иван Петров</p>
+        </div>
+        <div class="share_btn">
+          <span class="fi fi-rr-check"></span>
+        </div>
+      </div>
+    </div>
+    <span class="fi fi-rr-angle-down" (click)="show($event, null)"></span>
+  </div>
+</ng-template>
